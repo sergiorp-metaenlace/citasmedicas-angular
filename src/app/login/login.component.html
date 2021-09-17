@@ -1,0 +1,20 @@
+
+<div class="container mx-auto mt-5">
+  <form [formGroup]="loginForm">
+    <h3 class="text-center">Iniciar sesión</h3>
+    <div class="row mb-3">
+      <label for="inputText3" class="col-sm-2 col-form-label">Nombre de usuario</label>
+      <div class="col-sm-10">
+        <input type="text" formControlName="user" class="form-control" id="inputText3">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+      <div class="col-sm-10">
+        <input type="password" formControlName="clave" class="form-control" id="inputPassword3">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Iniciar sesión</button>
+    <button class="btn btn-secundary" (click)="goHome()">Volver</button>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <span class="navbar-brand h1">Bienvenid@ {{paciente.user}}</span>
+    <div class="navbar-nav">
+      <a class="nav-link" [routerLink]="" (click)="goHome()">Inicio</a>
+      <a class="nav-link" [routerLink]="" (click)="crearCita()">Crear cita</a>
+      <a class="nav-link" [routerLink]="" (click)="verCitas()">Mis citas</a>
+      <a class="nav-link" [routerLink]="" (click)="verMedicos()">Mis médicos</a>
+      <a class="nav-link active" [routerLink]="" aria-current="page">Añadir médico</a>
+    </div>
+  </div>
+  <a class="nav-link float-right" [routerLink]="" (click)="logout()">Cerrar sesión</a>
+</nav>
+
+<div class="container-sm mt-5">
+
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medico of medicos">
+        <td>{{medico.nombre}}</td>
+        <td>{{medico.apellidos}}</td>
+        <td><button class="btn-primary" (click)="addMedico(medico)">Añadir médico</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

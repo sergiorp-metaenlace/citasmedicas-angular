@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: coral;
+}
+
+code {
+  color: #e01a76;
+}
+
+.bg-primary{
+    color: coral;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+

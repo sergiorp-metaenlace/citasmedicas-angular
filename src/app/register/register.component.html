@@ -1,0 +1,74 @@
+<div class="container">
+  <div *ngIf="paciente" class="container mx-auto mt-5">
+    <h3 class="text-center">Registrar paciente</h3>
+    <form [formGroup]="registerFormPaciente" class="row g-3">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control" id="inputNombre4">
+      </div>
+      <div class="col-md-6">
+        <label for="apellidos" class="form-label">Apellidos</label>
+        <input type="text" formControlName="apellidos" class="form-control" id="inputApellidos4">
+      </div>
+      <div class="col-md-6">
+        <label for="user" class="form-label">Nombre de usuario</label>
+        <input type="text" formControlName="user" class="form-control" id="inputUser4">
+      </div>
+      <div class="col-md-6">
+        <label for="clave" class="form-label">Contraseña</label>
+        <input type="password" formControlName="clave" class="form-control" id="inputPassword4" >
+      </div>
+      <div class="col-md-6">
+        <label for="nss" class="form-label">NSS</label>
+        <input type="text" formControlName="nss" class="form-control" id="inputNSS4" >
+      </div>
+      <div class="col-md-6">
+        <label for="numTarjeta" class="form-label">Número Tarjeta</label>
+        <input type="text" formControlName="numTarjeta" class="form-control" id="inputTarjeta4">
+      </div>
+      <div class="col-md-6">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" formControlName="telefono" class="form-control" id="inputPhone4">
+      </div>
+      <div class="col-12">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input type="text" formControlName="direccion" class="form-control" id="inputAddress">
+      </div>
+      <div class="col-12 mt-2">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Registrarse</button>
+        <button class="btn btn-secondary" (click)="goHome()">Volver</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="!paciente" class="container mx-auto mt-5">
+    <h3 class="text-center">Registrar médico</h3>
+    <form [formGroup]="registerFormMedico" class="row g-3">
+      <div class="col-md-6">
+        <label for="inputNombre4" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control" id="inputNombre5">
+      </div>
+      <div class="col-md-6">
+        <label for="inputApellidos4" class="form-label">Apellidos</label>
+        <input type="text" formControlName="apellidos" class="form-control" id="inputApellidos5">
+      </div>
+      <div class="col-md-6">
+        <label for="inputUser4" class="form-label">Nombre de usuario</label>
+        <input type="text" formControlName="user" class="form-control" id="inputUser5">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Contraseña</label>
+        <input type="password" formControlName="clave" class="form-control" id="inputPassword5">
+      </div>
+      <div class="col-12">
+        <label for="inputColegiado" class="form-label">Número colegiado</label>
+        <input type="text" formControlName="numColegiado" class="form-control" id="inputColegiado5">
+      </div>
+      <div class="col-12 mt-2">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Registrarse</button>
+        <button type="submit" class="btn btn-secondary" (click)="goHome()">Volver</button>
+      </div>
+
+    </form>
+  </div>
+</div>

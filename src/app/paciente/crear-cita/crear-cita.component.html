@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <span class="navbar-brand h1">Bienvenid@ {{paciente.user}}</span>
+    <div class="navbar-nav">
+      <a class="nav-link" [routerLink]="" (click)="goHome()">Inicio</a>
+      <a class="nav-link active" [routerLink]="" aria-current="page">Crear cita</a>
+      <a class="nav-link" [routerLink]="" (click)="verCitas()">Mis citas</a>
+      <a class="nav-link" [routerLink]="" (click)="verMedicos()">Mis médicos</a>
+      <a class="nav-link" [routerLink]="" (click)="newMedico()">Añadir médico</a>
+    </div>
+  </div>
+  <a class="nav-link float-right" [routerLink]="" (click)="logout()">Cerrar sesión</a>
+</nav>
+
+<div class="container-lg">
+  <form [formGroup]="crearCitaForm" class="row g-3 text-center border border-dark mt-5 p-5">
+
+    <div class="col-md-12">
+      <p class="h4 mb-4">Crear una nueva cita</p>
+      <p>Rellene los recuadros siguientes con los datos de la cita.</p>
+    </div>
+
+    <div class="input-group col-md-12 mb-4">
+      <label class="input-group-text" for="inputGroupSelect01">Médico</label>
+      <select class="form-select" aria-label="Default select example" formControlName="medico">
+        <option *ngFor="let medico of medicos" [ngValue]='medico.id'>{{medico.nombre}} {{medico.apellidos}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-12">
+      <label>Paciente ID</label>
+      <input disabled type="number" formControlName="paciente" class="form-control mb-4" value="{{paciente.id}}">
+    </div>
+
+    <div class="col-md-12">
+      <label>Motivo de la cita</label>
+      <input type="text" formControlName="motivoCita" class="form-control mb-4">
+    </div>
+
+    <div class="col-md-12">
+      <label>Fecha y hora</label>
+      <input class="form-control mb-4 " formControlName="fechaHora" placeholder="Formato: dd-mm-yyyy HH:MM" />
+    </div>
+
+    <div class="col-md-12">
+      <!-- Sign in button -->
+      <button type="button" class="btn btn-primary btn-lg d-md-flex" (click)="addCita()">Crear cita</button>
+    </div>
+
+  </form>
+</div>
